@@ -1,0 +1,255 @@
+/* CSS Variables for Light/Dark Mode */
+:root {
+    --bg-color: #88c1df;
+    --text-color: #211b1c;
+    --text-secondary: #010f27;
+    --pill-bg: #a9aca9;
+    --link-color: #12385e;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+}
+
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #eaeaea;
+    --text-secondary: #aaaaaa;
+    --pill-bg: #2a2a2a;
+    --link-color: #79b8ff;
+    --border-color: #2c2c2c;
+    --input-bg: #1e1e1e;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 40px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Hero Section & Profile Image */
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+    transition: border-color 0.3s ease;
+}
+
+/* Sections */
+section {
+    margin-bottom: 48px;
+}
+
+h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+#about p {
+    margin-bottom: 16px;
+}
+
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-pill {
+    background-color: var(--pill-bg);
+    padding: 6px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.projects-container{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.project{
+ 
+  background-color:#9b9fa3;
+padding:20px;
+border-radius:10px;
+}
+.project h3{
+  color:#1a1b1c
+}
+
+
+.contact-desc {
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+}
+
+#contact-form {
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--link-color);
+}
+
+.submit-btn {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.85;
+}
+
+.form-status {
+    margin-top: -16px;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    color: #2e7d32;
+}
+
+/* Social Links */
+.contact-links {
+    display: flex;
+    gap: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    body {
+        margin: 16px;
+        padding: 0 20px 24px;
+        border-radius: 8px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .profile-img {
+        width: 90px;
+        height: 90px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    header {
+        padding: 24px 0;
+        margin-bottom: 28px;
+    }
+}
